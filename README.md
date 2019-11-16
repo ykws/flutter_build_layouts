@@ -1,6 +1,6 @@
-# building_layouts
+# Flutter Building layouts
 
-A new Flutter project.
+https://flutter.dev/docs/development/ui/layout/tutorial
 
 ## Getting Started
 
