@@ -65,10 +65,10 @@ class MyApp extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
+          title: const Text('Flutter layout demo'),
         ),
         body: ListView(
           children: [
