@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
               children: [
                 Container(
                   padding: const EdgeInsets.only(bottom: 8),
-                  child: Text(
+                  child: const Text(
                     'Oeschinen Lake Campground',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -31,26 +35,24 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          FavoriteWidget(),
+          const FavoriteWidget(),
         ],
       ),
     );
 
     Color color = Theme.of(context).primaryColor;
 
-    Widget buttonSection = Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          _buildButtonColumn(color, Icons.call, 'CALL'),
-          _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
-          _buildButtonColumn(color, Icons.share, 'SHARE'),
-        ],
-      ),
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
     );
 
-    Widget textSection = Container(
-      padding: const EdgeInsets.all(32),
+    Widget textSection = const Padding(
+      padding: EdgeInsets.all(32),
       child: Text(
         'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
         'Alps. Situated 1,578 meters above sea level, it is one of the '
@@ -66,12 +68,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter layout demo')
+          title: const Text('Flutter layout demo'),
         ),
         body: ListView(
           children: [
             Image.asset(
-              'images/lake.jpg',
+              'images/lake.jpeg',
               width: 600,
               height: 240,
               fit: BoxFit.cover,
@@ -108,6 +110,8 @@ class MyApp extends StatelessWidget {
 }
 
 class FavoriteWidget extends StatefulWidget {
+  const FavoriteWidget({Key? key}) : super(key: key);
+
   @override
   _FavoriteWidgetState createState() => _FavoriteWidgetState();
 }
@@ -134,16 +138,20 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          padding: EdgeInsets.all(0),
+          padding: const EdgeInsets.all(0),
           child: IconButton(
-            icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),
+            padding: const EdgeInsets.all(0),
+            alignment: Alignment.centerRight,
+            icon: (_isFavorited
+              ? const Icon(Icons.star)
+              : const Icon(Icons.star_border)),
             color: Colors.red[500],
             onPressed: _toggleFavorite,
           ),
         ),
         SizedBox(
           width: 18,
-          child: Container(
+          child: SizedBox(
             child: Text('$_favoriteCount'),
           ),
         ),
