@@ -1,5 +1,9 @@
 # Flutter Building layouts
 
+[![Android](https://github.com/ykws/flutter_build_layouts/actions/workflows/main.yml/badge.svg)](https://github.com/ykws/flutter_build_layouts/actions/workflows/main.yml)
+[![macOS](https://img.shields.io/badge/macOS-BigSur-black)](https://developer.apple.com/macos/)
+[![Flutter](https://img.shields.io/badge/Flutter-2.10.3-blue)](https://flutter.dev/)
+
 [Building layouts
 ](https://flutter.dev/docs/development/ui/layout/tutorial)
 
